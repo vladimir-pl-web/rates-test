@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rates-test
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rates-test
+  template:
+    metadata:
+      labels:
+        app: rates-test
+    spec:
+      containers:
+        - name: rates-test
+          image: vladimirpl/rates-test:myta
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
