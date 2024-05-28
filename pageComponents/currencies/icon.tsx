@@ -3,7 +3,7 @@
 "use client"
 import Image from "next/image";
 import genericIcon from "../../public/currencyIcons/generic.svg"
-import {memo, useCallback, useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 
 export default function Icon ({name, height, width}:IconProps){

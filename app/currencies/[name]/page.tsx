@@ -4,6 +4,7 @@ import styles from "./currency.module.scss"
 import { TypographyH2 } from "@/components/typography/typography"
 import { cn } from "@/lib/utils"
 import Icon from "@/pageComponents/currencies/icon"
+import Converter from "@/pageComponents/currencies/converter"
 
 interface Params {
     params: {
@@ -28,9 +29,13 @@ export default async function Currency({params:{name}}: Params) {
             width={28}
             height={28}
             /> 
-            {currencyInfo?.name}({name})
+            Convert {currencyInfo?.name}({name}) 
             </TypographyH2>
-
+                <Converter 
+                name={name}
+                locale="EUR"
+                rate={rate?.rate ? Number(rate.rate) : 0}
+                />
             
         </div>
     )

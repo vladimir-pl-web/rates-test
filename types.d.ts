@@ -20,6 +20,12 @@ interface IHeaderProps{
     classNames?: string
 }
 
+interface IConverter{
+  name:string;
+  locale:string;
+  rate:number
+}
+
 interface IconProps{
     name:string;
     width: number;

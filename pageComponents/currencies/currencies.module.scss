@@ -13,3 +13,13 @@
         }
     }
 }
+.converter{
+    @apply text-lg;
+    .inputs{
+        @apply mt-12
+    }
+}
+
+.button{
+    @apply bg-red-300
+}
