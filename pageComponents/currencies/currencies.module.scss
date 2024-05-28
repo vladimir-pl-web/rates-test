@@ -15,11 +15,25 @@
 }
 .converter{
     @apply text-lg;
-    .inputs{
-        @apply mt-12
+    .content{
+        @apply flex gap-8 mt-12 items-center justify-between;
+        .inputs{
+            @apply  flex  flex-col gap-6
+        }
     }
+
 }
 
 .button{
-    @apply bg-red-300
+    @apply flex justify-center rotate-90;
+    button{
+        @apply h-12  p-2 w-12 
+    }
+}
+
+.inputBox{
+    @apply flex gap-6;
+    .label{
+        @apply flex justify-center items-center rounded-md py-2 px-4 bg-gray-300 h-[2.5rem] w-24
+    }
 }

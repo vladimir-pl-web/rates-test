@@ -24,6 +24,8 @@ const config = {
         accent: '#6130FF',
         'alice-blue': '#dcf8ff',
         'light-blue': '#E6ECFF',
+        'translucent-alice-blue': 'rgba(240, 248, 255, 0.8)',
+
 
       },
       keyframes: {

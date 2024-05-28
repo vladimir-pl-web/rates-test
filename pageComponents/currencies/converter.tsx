@@ -2,11 +2,17 @@
 
 import { cn } from "@/lib/utils"
 import styles from "./currencies.module.scss"
-import { FC, useCallback, useEffect, useMemo, useState } from "react"
+import { ChangeEvent, FC, useCallback, useEffect, useMemo, useState } from "react"
 import { TypographyP } from "@/components/typography/typography"
 import { CustomButton } from "@/components/button/button"
 import Image from "next/image";
 import arrows from "../../public/arrows.svg"
+import { Input } from "@/components/input/input"
+
+export enum Directions{
+    LEFT = "left",
+    RIGHT = "right"
+}
 
 const Converter:FC<IConverter> = ({name, locale, rate})=>{
     const[ascending, setAscending] = useState<boolean>(true)
@@ -16,9 +22,10 @@ const Converter:FC<IConverter> = ({name, locale, rate})=>{
     console.log(rate, "rate")
 
     useEffect(()=>{
-        const inputRightDynamic = ascending ? (inputLeft / rate) :(inputLeft* rate)
-        setInputRight(inputRightDynamic )
-    },[ascending, inputLeft, rate])
+        const inputRightDynamic = ascending ? (inputLeft / rate) : (inputLeft* rate)
+
+        setInputRight(inputRightDynamic)
+    },[ascending, inputLeft,  rate])
 
     const infoString = useMemo(()=>{
         const leftName = ascending ? name : locale
@@ -29,7 +36,11 @@ const Converter:FC<IConverter> = ({name, locale, rate})=>{
 
     const onDirectionHandler = useCallback(()=>{
         setAscending((prev)=>!prev)
+    },[])
 
+    const onInputsHandler = useCallback((e:ChangeEvent<HTMLInputElement>)=>{
+        const data = e.target.value
+            setInputLeft(+data)
     },[])
 
     return(
@@ -37,20 +48,50 @@ const Converter:FC<IConverter> = ({name, locale, rate})=>{
         <TypographyP>
             {infoString}
         </TypographyP>
+    <div className={cn(styles.content)}>
     <div className={styles.inputs}>
+
+    <div className={cn(styles.inputBox)}>
+    <Input
+    type="number"
+    step={0.01}
+    value={inputLeft}
+    onChange={(event)=>onInputsHandler(event)}
+    />
+    <div className={cn(styles.label)}>
+        {ascending ? name : locale}
+    </div >
+    </div>
+
+    <div className={cn(styles.inputBox)}>
+    <Input 
+    type="number"
+    value={inputRight.toFixed(2)}
+    disabled={true}
+    />
+    <div className={cn(styles.label)}>
+    {ascending ? locale : name}
+    </div>
+    </div>
+    </div>
+    <div className={cn(styles.button)}>
     <CustomButton
     onClick={onDirectionHandler} 
     >
         <Image 
         src={arrows}
         alt="arrows"
-        width={28}
-        height={28}
+        width={30}
+        height={30}
         />
+
     </CustomButton>
+    </div>
     </div>
 
     </div>)
 }
 
 export default Converter
+
+
