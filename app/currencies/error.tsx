@@ -2,6 +2,10 @@
  
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation'
+import styles from "./currencies.module.scss"
+import { cn } from "@/lib/utils";
+import { TypographyH2 } from '@/components/typography/typography';
+import { CustomButton } from '@/components/button/button';
  
 export default function Error({
   error,
@@ -20,17 +24,20 @@ export default function Error({
 
 
   return (
-    <main className="flex h-full flex-col items-center justify-center">
-      <h2 className="text-center">{error.message} Try again later</h2>
-      <button
-        className="mt-4 rounded-md bg-blue-500 px-4 py-2 text-sm text-white transition-colors hover:bg-blue-400"
+    <main className={cn(styles.error)}>
+      <TypographyH2 
+      classNames='border-none p-0'
+      >{error.message}. Try again later</TypographyH2>
+      <CustomButton
         onClick={
-
-          () => router.push('/')
+          () => {
+            reset()
+            
+          }
         }
       >
         Back to Main page
-      </button>
+      </CustomButton>
     </main>
   );
 }

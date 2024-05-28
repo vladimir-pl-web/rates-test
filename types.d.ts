@@ -16,7 +16,8 @@ interface IDataFetchError{
 
 
 interface IHeaderProps{
-    children: string | ReactNode
+    children: string | ReactNode;
+    classNames?: string
 }
 
 interface IconProps{

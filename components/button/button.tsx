@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import styles from "./button.module.scss"
 
 interface CustomButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
@@ -9,7 +10,7 @@ export const CustomButton = (props: CustomButtonProps) => {
     <button
       {...props}
       className={cn(
-        'btn-common bg-alice-blue hover:bg-primary hover:text-light-blue active:animate-buttonPress',
+        styles.button,
         props.className,
       )}
     >

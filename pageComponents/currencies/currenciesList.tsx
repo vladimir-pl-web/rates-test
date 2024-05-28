@@ -1,8 +1,8 @@
 
 import Link from "next/link"
 import styles from './currencies.module.scss'
-import { TypographyH2, TypographyP } from "@/components/typography"
 import { cn } from "@/lib/utils"
+import { TypographyH2, TypographyP } from "@/components/typography/typography"
 
 interface ICurrenciesList{
     currencies: IRates[]

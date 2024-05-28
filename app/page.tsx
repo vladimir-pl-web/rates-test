@@ -1,6 +1,6 @@
 
-import { CustomButton } from "@/components/button";
-import { TypographyH1 } from "@/components/typography";
+import { CustomButton } from "@/components/button/button";
+import { TypographyH1 } from "@/components/typography/typography";
 import styles from "./main.module.scss"
 import Link from "next/link";
 

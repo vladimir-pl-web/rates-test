@@ -1,5 +1,5 @@
+import { getCurrency } from "@/api/getCurrencyInfo"
 import { getRates } from "@/api/getRates"
-
 
 interface Params {
     params: {
@@ -10,8 +10,9 @@ interface Params {
 
 export default async function Currency({params:{name}}: Params) {
     const rateList = await getRates()
+    const currency = await getCurrency(name)
+    console.log(currency.data, "curr")
     const {rates} = rateList
-    
     const rate = rates.find((el)=>el.name === name)
 
     return (
