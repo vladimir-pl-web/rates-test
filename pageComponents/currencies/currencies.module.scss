@@ -1,0 +1,15 @@
+.container{
+    @apply  px-16 pt-12 flex gap-8 justify-center items-center flex-col;
+    .info{
+        @apply flex flex-col w-full justify-center items-center;
+    }
+    .list{
+        @apply px-4 gap-2 flex flex-wrap justify-between;
+        .item{
+            @apply p-2 w-40 bg-gray-200 rounded-md  transition-all delay-200 hover:bg-gray-300 ;
+            .link{
+                @apply hover:text-blue-500 scale-105 flex w-full h-full gap-2 justify-center transition-colors delay-200 hover:bg-gray-300
+            }
+        }
+    }
+}
