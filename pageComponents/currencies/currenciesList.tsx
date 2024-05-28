@@ -11,7 +11,6 @@ interface ICurrenciesList{
 
 
 export default  function CurrenciesList({currencies, localCurrency}:ICurrenciesList) {
-
     return (
         <div className={cn(styles.container)}>
            <TypographyH2>Crypto Currency List</TypographyH2>
@@ -33,9 +32,6 @@ export default  function CurrenciesList({currencies, localCurrency}:ICurrenciesL
                             href={`/currencies/${name}`}
                             className={styles.link}
                             >
-                                {/* <Icon 
-                                name={name}
-                                /> */}
                                 {name}/{currencyToEuro.toFixed(2)}
                                 </Link>
                         </li>

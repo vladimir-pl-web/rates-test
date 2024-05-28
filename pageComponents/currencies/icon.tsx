@@ -2,37 +2,40 @@
 
 "use client"
 import Image from "next/image";
-import { FC, useCallback, useEffect, useState } from "react";
+import genericIcon from "../../public/currencyIcons/generic.svg"
+import {memo, useCallback, useMemo, useState } from "react";
 
 
-export enum ICONS_MESSAGES {
-    ICON = "error"
-}
-
-
-export default function Icon ({name}:IconProps){
-
-    const defaultSrc: string = "/na.png"
+export default function Icon ({name, height, width}:IconProps){
     const [iconError, setIconError] = useState<boolean>(false) 
 
-    
-const onErrorHandler = useCallback((type:string)=>{
-    if(type === ICONS_MESSAGES.ICON) {
-        setIconError(true)
-    }
+const onErrorHandler = useCallback((data:boolean)=>{
+    setIconError(data)
 },[])
 
+
+const icon = useMemo(()=>{
+    return <Image 
+    src={ iconError ? genericIcon :`/currencyIcons/${name.toLowerCase()}.svg` } 
+    width={width}
+    height={height}
+    loading="eager"
+    className="transition-opacity opacity-0 duration-300"
+    onLoad={(image)=>{
+        image.currentTarget.classList.remove("opacity-0")
+        onErrorHandler(false)
+    }}
+    onError={()=>onErrorHandler(true)}
+    alt={"currency icon"} />
+},[height, iconError, name, onErrorHandler, width])
+
+
     return(
-        <Image 
-        src={ !iconError ? `/currencyIcons/${name.toLowerCase()}.svg` : `/currencyIcons/generic.svg`} 
-        fill={true}
-        loading="eager"
-        placeholder="blur"
-        blurDataURL={defaultSrc}
-        onLoad={()=>setIconError(false)}
-        onError={(error)=>setIconError(true)}
-        alt={"currency icon"} />
+        <>
+        {icon}
+        </>
 
     )
 }
+
 

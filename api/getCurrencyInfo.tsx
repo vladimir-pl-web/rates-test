@@ -1,5 +1,5 @@
 
-export async function getCurrency(name:string): Promise<any> {
+export async function getCurrency(name:string): Promise<ICoinInfo> {
  
     try{
         const res = await fetch(`https://pro-api.coinmarketcap.com/v2/cryptocurrency/quotes/latest?symbol=${name}`,{
@@ -11,7 +11,7 @@ export async function getCurrency(name:string): Promise<any> {
     }
 
     catch(error){
-    
+        throw new Error(`Failed to fetch ${name} crypto info`);
 }
 }
 
