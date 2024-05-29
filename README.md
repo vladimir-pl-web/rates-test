@@ -6,13 +6,34 @@
 Ensure you have node and npm with the required versions installed. Then run the following commands in terminal:
 
 ```bash
+Install project dependencies
+npm i 
+# or
+yarn install
+# or
+pnpm install
+
+Start in development mode
 npm run dev
 # or
 yarn dev
 # or
 pnpm dev
+
+Build
+npm run build
 # or
-bun dev
+yarn run build
+# or
+pnpm run build
+
+Start in production mode(when build successful)
+npm run start
+# or
+yarn run start
+# or
+pnpm run start
+
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
