@@ -1,0 +1,4 @@
+mocks/build/*.*
+/*.js
+/**/*.d.ts
+node_modules/
