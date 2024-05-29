@@ -1,0 +1,9 @@
+.item{
+    @apply relative text-gray-400 bg-accent/20 rounded-md
+}
+.pending{
+    @apply transition-opacity [&:disabled]:opacity-30
+}
+.select{
+    @apply inline-flex appearance-none bg-transparent py-2 px-4
+}

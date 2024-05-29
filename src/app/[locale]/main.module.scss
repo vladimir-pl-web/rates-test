@@ -4,3 +4,7 @@
         @apply z-10 w-full max-w-5xl items-center justify-center font-mono text-sm flex flex-col gap-6;
     }
 }
+
+.locale{
+    @apply flex pt-4 justify-end
+}

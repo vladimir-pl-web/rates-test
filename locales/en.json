@@ -1,26 +1,31 @@
 {
     "Currencies": {
-        "list": "Currencies list",
+        "list": "Currency List",
         "get_crypto": "Get Crypto Currencies",
         "header": "Crypto Currency List",
         "for_converting": "For converting click appropriate currency",
-        "for_example": "For example",
+        "for_example": "For example: BTC/64067.54 means 1 BTC = 64067.54 EUR",
         "means": "means",
         "convert": "Convert",
-        "relation": "Rates shown as a relation CURRENCY",
+        "relation": "Rates shown as a relation crypto/your currency",
         "title": "Test Next App"
-    
-
         },
-        "Errors": {
-            "try_again":"Try again later",
-            "back_to_main": "Back to Main page",
-            "back_to_list": "Back to the list",
-            "title": "Error info"
-            },
-            "NotFoundPage" :{
-                "title": "Not found page",
+    "Errors": {
+        "try_again":"Try again later",
+        "back_to_main": "Back to Main page",
+        "back_to_list": "Back to the list",
+        "title": "Error info"
+        },
+    "NotFoundPage" :{
+        "title": "Not found page",
                 "description": "Not found page"
-            }
+            },
+        "LocaleSwitcher":{
+            "label": "Change language",
+            "locale": "{locale, select, lv {Latvian} en {English} he {Hebrew} other {Unknown}}"
+        },
+        "LocaleLayout": {
+        "title": "Layout"
+    }
 }
   

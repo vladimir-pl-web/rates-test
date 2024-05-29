@@ -1,0 +1,34 @@
+
+    {
+        "Currencies": {
+            "list": "רשימת מטבעות",
+            "get_crypto": "קבל מטבעות קריפטו",
+            "header": "רשימה של מטבעות קריפטוגרפיים",
+            "for_converting": "להמרה לחץ על המטבע המתאים",
+            "for_example": "לדוגמה: BTC/64067.54 פירושו 1 BTC = 64067.54 EUR",
+            "means": "לדוגמה",
+            "convert": "להמיר",
+            "relation": "שיעורים מוצגים כיחס קריפטו/מטבע שלך",
+            "title": "Test Next App"
+        
+    
+            },
+        "Errors": {
+            "try_again":"נסה שוב מאוחר יותר",
+            "back_to_main": "חזרה לדף הראשי",
+            "back_to_list": "חזרה לרשימה",
+            "title": "Error info"
+            },
+        "NotFoundPage" :{
+            "title": "Not found page",
+            "description": "Not found page"
+                },
+        "LocaleSwitcher":{
+                "label": "שנה שפה",
+                "locale": "{locale, select, lv {לטבית} en {Eאנגלית} he {עִברִית} other {Unknown}}"
+            },
+        "LocaleLayout": {
+            "title": "Layout"
+            }
+    }
+       

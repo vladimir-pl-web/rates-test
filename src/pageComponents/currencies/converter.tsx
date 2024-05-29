@@ -19,8 +19,6 @@ const Converter:FC<IConverter> = ({name, locale, rate})=>{
     const[inputLeft, setInputLeft] = useState<number>(1)
     const[inputRight, setInputRight] = useState<number>(0)
 
-    console.log(rate, "rate")
-
     useEffect(()=>{
         const inputRightDynamic = ascending ? (inputLeft / rate) : (inputLeft* rate)
 
@@ -66,7 +64,7 @@ const Converter:FC<IConverter> = ({name, locale, rate})=>{
     <div className={cn(styles.inputBox)}>
     <Input 
     type="number"
-    value={inputRight.toFixed(2)}
+    value={inputRight.toFixed(5)}
     disabled={true}
     />
     <div className={cn(styles.label)}>

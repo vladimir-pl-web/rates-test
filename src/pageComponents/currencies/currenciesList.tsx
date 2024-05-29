@@ -18,8 +18,8 @@ export default  function CurrenciesList({currencies, localCurrency}:ICurrenciesL
         <div className={cn(styles.container)}>
            <TypographyH2>{t("header")}</TypographyH2>
            <div className={styles.info}>
-           <TypographyP>{t("relation")}/{localCurrency}</TypographyP>
-           <TypographyP>{t("for_example")}: BTC/64067.54 {t("means")} 1 BTC =  64067.54 EUR</TypographyP>
+           <TypographyP>{t("relation")}</TypographyP>
+           <TypographyP>{t("for_example")}</TypographyP>
            <TypographyP>{t("for_converting")} </TypographyP>
            </div>
 

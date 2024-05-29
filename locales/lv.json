@@ -1,26 +1,33 @@
 
 {
     "Currencies": {
-    "list": "",
+    "list": "Valūtu saraksts",
     "get_crypto": "Iegūstiet kriptovalūtas",
     "header": "Kriptovalūtu saraksts",
     "for_converting": "Lai konvertētu, noklikšķiniet uz atbilstošās valūtas",
-    "for_example": "Piemēram",
+    "for_example": "Piemēram: BTC/64067.54 nozīmē 1 BTC = 64067.54 EUR",
     "means": "nozīmē",
-    "relation": "Kursi parādīti kā attiecība CURRENCY",
+    "relation": "Kursi tiek rādīti kā kriptovalūtas/jūsu valūtas attiecība",
     "convert": "Konvertēt",
     "title": "Test Next App"
     
 
         },
-        "Errors": {
-            "try_again":"Pamēģini vēlreiz vēlāk",
-            "back_to_main": "Atpakaļ uz galveno lapu",
-            "back_to_list": "Atpakaļ uz sarakstu",
-            "title": "Informācija par kļūdu"
-            },
-            "NotFoundPage" :{
-                "title": "Lapa nav atrasta",
-                "description": "Lapa nav atrasta"
-            }
+    "Errors": {
+        "try_again":"Pamēģini vēlreiz vēlāk",
+        "back_to_main": "Atpakaļ uz galveno lapu",
+        "back_to_list": "Atpakaļ uz sarakstu",
+        "title": "Informācija par kļūdu"
+        },
+        "NotFoundPage" :{
+            "title": "Lapa nav atrasta",
+            "description": "Lapa nav atrasta"
+        },
+    "LocaleSwitcher":{
+            "label": "Mainīt valodu",
+            "locale": "{locale, select, lv {Latviski} en {Angļu} he {Ebreju} other {Nezināms}}"
+        },
+        "LocaleLayout": {
+            "title": "Layout"
+        }
 }

@@ -6,6 +6,9 @@ import {getMessages,  getTranslations,
   unstable_setRequestLocale} from 'next-intl/server';
 import { locales } from "@/src/config";
 import { ReactNode } from "react";
+import LocaleSwitcher from "@/src/pageComponents/localeSwitcher/switcher";
+import styles from "./main.module.scss";
+import { DirectionProvider } from '@radix-ui/react-direction';
 
 
   export function generateStaticParams() {
@@ -26,6 +29,7 @@ export async function generateMetadata({
   params: {locale}
 }: Omit<Props, 'children'>) {
   const t = await getTranslations({locale, namespace: 'LocaleLayout'});
+  
 
   return {
     title: t('title')
@@ -41,13 +45,19 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} dir={locale === 'he' ? 'rtl' : 'ltr'}>
       <body className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen bg-background font-sans antialiased py-8 px-16",
           fontSans.variable
         )}>
         <NextIntlClientProvider messages={messages}>
-          {children}
+       
+            <div className={cn(styles.locale)}>
+            <LocaleSwitcher />
+            </div>
+         
+            {children}
+       
         </NextIntlClientProvider>
           </body>
     </html>
