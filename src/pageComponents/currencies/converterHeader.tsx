@@ -3,10 +3,10 @@ import { TypographyH2 } from "@/src/components/typography/typography"
 import { cn } from "@/lib/utils"
 import { FC } from "react"
 import Icon from "@/src/pageComponents/currencies/icon"
-import {useTranslations} from 'next-intl';
+// import {useTranslations} from 'next-intl';
 
 const ConverterHeader:FC<IConverterHeader> = ({name, currencyAbbr})=>{
-    const t = useTranslations('Currencies');
+    // const t = useTranslations('Currencies');
     return(
         <TypographyH2 classNames={cn(styles.header)} > 
         <Icon 
@@ -14,7 +14,7 @@ const ConverterHeader:FC<IConverterHeader> = ({name, currencyAbbr})=>{
             width={28}
             height={28}
             /> 
-            {t("convert")} {currencyAbbr}({name}) 
+            Convert ({name}) 
         </TypographyH2>
 
 

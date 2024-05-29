@@ -3,9 +3,7 @@
 export async function getRates(): Promise<RatesResponse> {
     
     try{
-        const res = await fetch('https://api.coinbase.com/v2/exchange-rates?currency=EUR', {
-            next: { revalidate: 60 }
-        })
+        const res = await fetch('https://api.coinbase.com/v2/exchange-rates?currency=EUR')
     
         const data = await res.json()
     

@@ -4,17 +4,10 @@ import { cn } from "@/lib/utils"
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages,  getTranslations,
   unstable_setRequestLocale} from 'next-intl/server';
-import { locales } from "@/src/config";
 import { ReactNode } from "react";
 import LocaleSwitcher from "@/src/pageComponents/localeSwitcher/switcher";
 import styles from "./main.module.scss";
-import { DirectionProvider } from '@radix-ui/react-direction';
 
-
-  export function generateStaticParams() {
-    return locales.map((locale) => ({locale}));
-  }
-  
 const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -29,8 +22,6 @@ export async function generateMetadata({
   params: {locale}
 }: Omit<Props, 'children'>) {
   const t = await getTranslations({locale, namespace: 'LocaleLayout'});
-  
-
   return {
     title: t('title')
   };

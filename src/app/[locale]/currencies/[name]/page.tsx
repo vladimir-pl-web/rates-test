@@ -8,8 +8,18 @@ import ConverterHeader from "@/src/pageComponents/currencies/converterHeader"
 interface Params {
     params: {
         name: string,
-
     }
+}
+  
+
+export async function generateStaticParams() {
+    const rates = await getRates()
+
+    return rates.rates.map((element) => {
+        return [
+            {name:element.name}, 
+        ]
+    })
 }
 
 export default async function Currency({params:{name}}: Params) {
@@ -25,7 +35,7 @@ export default async function Currency({params:{name}}: Params) {
         <ConverterHeader 
         name={name}  
         currencyAbbr={currencyInfo?.name}
-        />
+        /> 
         <Converter 
              name={name}
             locale="EUR"
@@ -34,14 +44,4 @@ export default async function Currency({params:{name}}: Params) {
             
         </div>
     )
-}
-
-export async function generateStaticParams() {
-    const rates = await getRates()
-
-    return rates.rates.map((element) => {
-        return [
-            {name:element.name}, 
-        ]
-    })
 }
