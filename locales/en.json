@@ -1,0 +1,26 @@
+{
+    "Currencies": {
+        "list": "Currencies list",
+        "get_crypto": "Get Crypto Currencies",
+        "header": "Crypto Currency List",
+        "for_converting": "For converting click appropriate currency",
+        "for_example": "For example",
+        "means": "means",
+        "convert": "Convert",
+        "relation": "Rates shown as a relation CURRENCY",
+        "title": "Test Next App"
+    
+
+        },
+        "Errors": {
+            "try_again":"Try again later",
+            "back_to_main": "Back to Main page",
+            "back_to_list": "Back to the list",
+            "title": "Error info"
+            },
+            "NotFoundPage" :{
+                "title": "Not found page",
+                "description": "Not found page"
+            }
+}
+  

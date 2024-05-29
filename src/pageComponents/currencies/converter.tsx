@@ -3,11 +3,11 @@
 import { cn } from "@/lib/utils"
 import styles from "./currencies.module.scss"
 import { ChangeEvent, FC, useCallback, useEffect, useMemo, useState } from "react"
-import { TypographyP } from "@/components/typography/typography"
-import { CustomButton } from "@/components/button/button"
+import { TypographyP } from "@/src/components/typography/typography"
+import { CustomButton } from "@/src/components/button/button"
 import Image from "next/image";
-import arrows from "../../public/arrows.svg"
-import { Input } from "@/components/input/input"
+import arrows from "../../../public/arrows.svg"
+import { Input } from "@/src/components/input/input"
 
 export enum Directions{
     LEFT = "left",

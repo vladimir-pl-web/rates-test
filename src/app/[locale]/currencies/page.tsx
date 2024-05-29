@@ -1,7 +1,7 @@
 import { getRates } from "@/api/getRates";
-import CurrenciesList from "@/pageComponents/currencies/currenciesList";
 import styles from "./currencies.module.scss"
 import { cn } from "@/lib/utils";
+import CurrenciesList from "@/src/pageComponents/currencies/currenciesList";
 
 export default async function Currencies() {
   const rates = await getRates()

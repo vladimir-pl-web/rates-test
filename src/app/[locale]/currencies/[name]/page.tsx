@@ -1,10 +1,9 @@
 import { getCurrency } from "@/api/getCurrencyInfo"
 import { getRates } from "@/api/getRates"
+import Converter from "@/src/pageComponents/currencies/converter"
 import styles from "./currency.module.scss"
-import { TypographyH2 } from "@/components/typography/typography"
 import { cn } from "@/lib/utils"
-import Icon from "@/pageComponents/currencies/icon"
-import Converter from "@/pageComponents/currencies/converter"
+import ConverterHeader from "@/src/pageComponents/currencies/converterHeader"
 
 interface Params {
     params: {
@@ -19,23 +18,19 @@ export default async function Currency({params:{name}}: Params) {
     const currencyInfo = currency.data[name][0]
     const {rates} = rateList
     const rate = rates.find((el)=>el.name === name)
+  
     
     return (
         <div className={cn(styles.main)}>
-
-        <TypographyH2 classNames={cn(styles.header)} > 
-        <Icon 
-            name={name}
-            width={28}
-            height={28}
-            /> 
-            Convert {currencyInfo?.name}({name}) 
-            </TypographyH2>
-                <Converter 
-                name={name}
-                locale="EUR"
-                rate={rate?.rate ? Number(rate.rate) : 0}
-                />
+        <ConverterHeader 
+        name={name}  
+        currencyAbbr={currencyInfo?.name}
+        />
+        <Converter 
+             name={name}
+            locale="EUR"
+            rate={rate?.rate ? Number(rate.rate) : 0}
+            />
             
         </div>
     )

@@ -2,7 +2,7 @@
 
 "use client"
 import Image from "next/image";
-import genericIcon from "../../public/currencyIcons/generic.svg"
+import genericIcon from "../../../public/currencyIcons/generic.svg"
 import { useCallback, useMemo, useState } from "react";
 
 

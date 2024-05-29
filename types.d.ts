@@ -32,6 +32,19 @@ interface IconProps{
     height:number
 }
 
+interface IConverterHeader{name:string, currencyAbbr:string}
+
+interface IError  {
+  error: Error & { digest?: string };
+  // reset: () => void; 
+}
+
+interface IErrorBoundary{
+  errorMessage: string;
+  btnText: string;
+  path: string;
+}
+
 interface ICoinInfo {
     status: Status;
     data: Data;

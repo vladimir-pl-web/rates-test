@@ -1,0 +1,26 @@
+
+{
+    "Currencies": {
+    "list": "",
+    "get_crypto": "Iegūstiet kriptovalūtas",
+    "header": "Kriptovalūtu saraksts",
+    "for_converting": "Lai konvertētu, noklikšķiniet uz atbilstošās valūtas",
+    "for_example": "Piemēram",
+    "means": "nozīmē",
+    "relation": "Kursi parādīti kā attiecība CURRENCY",
+    "convert": "Konvertēt",
+    "title": "Test Next App"
+    
+
+        },
+        "Errors": {
+            "try_again":"Pamēģini vēlreiz vēlāk",
+            "back_to_main": "Atpakaļ uz galveno lapu",
+            "back_to_list": "Atpakaļ uz sarakstu",
+            "title": "Informācija par kļūdu"
+            },
+            "NotFoundPage" :{
+                "title": "Lapa nav atrasta",
+                "description": "Lapa nav atrasta"
+            }
+}

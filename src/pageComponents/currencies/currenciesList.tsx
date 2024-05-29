@@ -2,7 +2,8 @@
 import Link from "next/link"
 import styles from './currencies.module.scss'
 import { cn } from "@/lib/utils"
-import { TypographyH2, TypographyP } from "@/components/typography/typography"
+import { TypographyH2, TypographyP } from "@/src/components/typography/typography"
+import {useTranslations} from 'next-intl';
 
 interface ICurrenciesList{
     currencies: IRates[]
@@ -11,13 +12,15 @@ interface ICurrenciesList{
 
 
 export default  function CurrenciesList({currencies, localCurrency}:ICurrenciesList) {
+    const t = useTranslations('Currencies');
+
     return (
         <div className={cn(styles.container)}>
-           <TypographyH2>Crypto Currency List</TypographyH2>
+           <TypographyH2>{t("header")}</TypographyH2>
            <div className={styles.info}>
-           <TypographyP>Rates shown as a relation CURRENCY/Euro</TypographyP>
-           <TypographyP>For example: BTC/64067.54 means 1 BTC =  64067.54 EUR</TypographyP>
-           <TypographyP>For converting click appropriate currency </TypographyP>
+           <TypographyP>{t("relation")}/{localCurrency}</TypographyP>
+           <TypographyP>{t("for_example")}: BTC/64067.54 {t("means")} 1 BTC =  64067.54 EUR</TypographyP>
+           <TypographyP>{t("for_converting")} </TypographyP>
            </div>
 
             <ul className={cn(styles.list, "custom-scroll overflow-y-auto overflow-x-hidden")}>
